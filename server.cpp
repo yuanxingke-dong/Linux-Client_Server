@@ -120,7 +120,7 @@ int run_child(int idx, client_data *users, char *share_mem) {
                     if (errno != EAGAIN) {
                         stop_child = true;
                     }
-                } else if (ret == 0) {
+                } else if (ret == 0) { // 如果客户端断开连接，服务端会收到0字节的通知
                     stop_child = true;
                 } else {
                     print_time();
